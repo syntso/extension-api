@@ -1,0 +1,31 @@
+[package]
+name = "synt-extension-api"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.98"
+license = "Apache-2.0"
+description = "Rust SDK for Synt extensions"
+repository = "https://github.com/syntso/extension-api"
+publish = false
+
+[dependencies]
+thiserror = "2.0.21"
+wit-bindgen = { version = "0.62.0", default-features = false, features = ["macros", "realloc", "std"] }
+
+[[example]]
+name = "hello"
+path = "examples/hello/lib.rs"
+crate-type = ["cdylib"]
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[lints.clippy]
+pedantic = { level = "warn", priority = -1 }
+unwrap_used = "warn"
+dbg_macro = "warn"
+todo = "warn"
+missing_errors_doc = "allow"
+missing_panics_doc = "allow"
+must_use_candidate = "allow"
+unused_async_trait_impl = "allow"
