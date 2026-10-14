@@ -26,8 +26,11 @@ jobs:
       - run: cargo clippy --workspace --all-targets -- -D warnings
       - run: cargo clippy --workspace --all-targets --target wasm32-wasip2 -- -D warnings
       - run: cargo deny check
-      - run: cargo build --example hello --target wasm32-wasip2 --release
-      - run: wasm-tools component wit target/wasm32-wasip2/release/examples/hello.wasm
+      - run: cargo build --examples --target wasm32-wasip2 --release
+      - run: |
+          for example in hello notes watch; do
+            wasm-tools component wit "target/wasm32-wasip2/release/examples/$example.wasm"
+          done
 
   test:
     strategy:
