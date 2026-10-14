@@ -1,7 +1,7 @@
 id = "hello"
 name = "Hello"
-version = "0.1.0"
-api = "0.1"
+version = "0.2.0"
+api = "0.2"
 description = "Greets a host and counts the greetings."
 repository = "https://github.com/syntso/extension-api"
 
