@@ -1,0 +1,25 @@
+id = "notes"
+name = "Notes"
+version = "0.2.0"
+api = "0.2"
+description = "Keeps plain notes in a project, edited in a web panel and merged line by line."
+repository = "https://github.com/syntso/extension-api"
+
+[capabilities]
+documents = true
+
+[[contributes.document]]
+type = "note"
+title = "Note"
+suffix = "note"
+panel = "editor"
+
+[[contributes.panel]]
+id = "editor"
+title = "Note editor"
+entry = "index.html"
+
+[[contributes.sidebar]]
+id = "notes"
+title = "Notes"
+view = "notes"

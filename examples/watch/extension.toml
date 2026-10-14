@@ -1,0 +1,26 @@
+id = "watch"
+name = "Watch"
+version = "0.2.0"
+api = "0.2"
+description = "Polls a health endpoint with a token and shows the answer in the status bar."
+repository = "https://github.com/syntso/extension-api"
+
+[capabilities]
+storage = true
+http = ["status.example.com"]
+secrets = { "watch/token" = ["status.example.com"] }
+events = ["approval"]
+timers = true
+
+[[contributes.status]]
+id = "health"
+title = "Health"
+view = "health"
+
+[[contributes.command]]
+title = "Check health now"
+action = "watch.check"
+
+[contributes.settings.schema]
+type = "object"
+properties = { every = { type = "integer" } }

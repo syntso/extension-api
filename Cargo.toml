@@ -1,6 +1,6 @@
 [package]
 name = "synt-extension-api"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2024"
 rust-version = "1.98"
 license = "Apache-2.0"
@@ -9,12 +9,23 @@ repository = "https://github.com/syntso/extension-api"
 publish = false
 
 [dependencies]
+serde_json = "1.0.154"
 thiserror = "2.0.21"
 wit-bindgen = { version = "0.62.0", default-features = false, features = ["macros", "realloc", "std"] }
 
 [[example]]
 name = "hello"
 path = "examples/hello/lib.rs"
+crate-type = ["cdylib"]
+
+[[example]]
+name = "notes"
+path = "examples/notes/lib.rs"
+crate-type = ["cdylib"]
+
+[[example]]
+name = "watch"
+path = "examples/watch/lib.rs"
 crate-type = ["cdylib"]
 
 [lints.rust]
